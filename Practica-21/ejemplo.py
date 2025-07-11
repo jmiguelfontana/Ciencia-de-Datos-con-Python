@@ -24,3 +24,11 @@ def suma10(x):
     return x + 10
 numeros2 = numeros.apply(suma10)
 print(numeros2)
+
+numeros3=pd.Series([9, 2, 5, 8, 5, 6, 7])
+numeros3 = numeros3.sort_values(ascending=True, ignore_index=True)
+print(numeros3)
+
+numeros4 = pd.Series([9, 2, 5, 8, 5, 6, 7])
+print(numeros4[numeros4 > 5].sort_values(ascending=True, ignore_index=True))
+
