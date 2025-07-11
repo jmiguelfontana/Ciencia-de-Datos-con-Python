@@ -14,4 +14,4 @@ def restar2(x):
 srNumerosVip40 = srNumerosVip40.apply(restar2)
 print("Varianza",srNumerosVip40.var())
 print("Desviación",round(srNumerosVip40.std(),2))
-print("Suma",srNumerosVip40.sum())
+print("Suma acumulada",srNumerosVip40.cumsum())
