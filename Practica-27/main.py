@@ -6,4 +6,4 @@ february2019 = pd.read_csv(r'D:\Docs\Cursos\Bcn Activa\Ciencia de Datos con Pyth
 dosmeses = pd.concat([january2019,february2019], ignore_index=True)
 filtro = dosmeses['Customer'].str.endswith('n')
 
-print(dosmeses[filtro])
+print(dosmeses[filtro].IdOrder.count())
