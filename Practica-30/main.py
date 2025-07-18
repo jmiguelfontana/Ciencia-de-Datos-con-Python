@@ -10,5 +10,6 @@ trimestre_fichero['Amount'] = trimestre_fichero['Unit Price'] * trimestre_ficher
 resultado = trimestre_fichero.groupby(['Ship Country','Category']).Amount.sum()
 
 resultado = pd.DataFrame(resultado).reset_index()
-resultado.to_csv(r'.\prueba2.csv',sep=';')
+#resultado.to_csv(r'.\prueba2.csv',sep=';')
+resultado.to_excel(r'.\prueba2.xlsx',sheet_name='Hoja 1',header=True,index=False)
 print(resultado)
