@@ -16,17 +16,16 @@ def connect_to_database():
         print(f"Error connecting to database: {e}")
         return None
 
-def fetch_data(connection):
+def fetch_data(connection, sql_query):
     try:
-        query = "SELECT * FROM Pedidos"
-        df = pd.read_sql(query, connection)
+        df = pd.read_sql(sql_query, connection)
         print("Data fetched successfully")
         return df
     except Exception as e:
         print(f"Error fetching data: {e}")
         return None
 
-print(pyodbc.drivers())
 conexion = connect_to_database()
-print(fetch_data(conexion))
-
+dfFinlandia = fetch_data(conexion, "SELECT TOP 50 * FROM Pedidos WHERE PaísDestinatario IN('Finlandia','Suiza')")
+print(dfFinlandia.IdPedido.count())
+conexion.close()
